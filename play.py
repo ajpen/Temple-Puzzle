@@ -8,7 +8,7 @@ from SequentialReader import SequentialReader
 Reader = SequentialReader()
 
 LEFT_LED = 13
-RIGHT_LED = 15
+RIGHT_LED = 16
 CORRECT_LED = 31
 WRONG_LED = 33
 
