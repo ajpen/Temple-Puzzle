@@ -1,5 +1,6 @@
 import sys
 import time
+import signal
 
 from ledcontrol import LEDoff, LEDon
 from puzzles import Puzzles
@@ -11,6 +12,10 @@ RIGHT_LED = 15
 CORRECT_LED = 31
 WRONG_LED = 33
 
+def safe_exit():
+    reset_LEDs()
+
+signal.signal(signal.SIGINT, safe_exit())
 
 def read_left():
     while True:
