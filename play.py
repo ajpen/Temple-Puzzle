@@ -31,7 +31,7 @@ signal.signal(signal.SIGINT, safe_exit)
 def read_left():
     while True:
         first = Reader.ReadCE0()
-        time.sleep(5)
+        time.sleep(2)
         if Reader.ReadCE0() == first:
             LEDon(LEFT_LED)
             return first
@@ -40,7 +40,7 @@ def read_left():
 def read_right():
     while True:
         first = Reader.ReadCE1()
-        time.sleep(5)
+        time.sleep(2)
         if Reader.ReadCE1() == first:
             LEDon(RIGHT_LED)
             return first
@@ -70,5 +70,5 @@ if __name__=="__main__":
         else:
             lives = lives - 1
             LEDon(WRONG_LED)
-            time.sleep(2)
+            time.sleep(5)
             reset_LEDs()
