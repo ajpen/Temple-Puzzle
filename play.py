@@ -1,6 +1,8 @@
 import sys
 import time
 import signal
+import RPi.GPIO as GPIO
+
 
 from ledcontrol import LEDoff, LEDon
 from puzzles import Puzzles
@@ -20,8 +22,9 @@ def reset_LEDs():
     LEDoff(WRONG_LED)
 
 
-def safe_exit(**kwargs):
+def safe_exit(*args, **kwargs):
     reset_LEDs()
+    GPIO.cleanup()
 
 signal.signal(signal.SIGINT, safe_exit)
 
@@ -61,7 +64,7 @@ if __name__=="__main__":
         if left_input == game[0] and right_input == game[1]:
             LEDon(CORRECT_LED)
             time.sleep(10)
-            reset_LEDs()
+            safe_exit()
             sys.exit(0)
 
         else:
