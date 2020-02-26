@@ -12,6 +12,14 @@ RIGHT_LED = 15
 CORRECT_LED = 31
 WRONG_LED = 33
 
+
+def reset_LEDs():
+    LEDoff(LEFT_LED)
+    LEDoff(RIGHT_LED)
+    LEDoff(CORRECT_LED)
+    LEDoff(WRONG_LED)
+
+
 def safe_exit():
     reset_LEDs()
 
@@ -33,12 +41,6 @@ def read_right():
         if Reader.ReadCE1() == first:
             LEDon(RIGHT_LED)
             return first
-
-def reset_LEDs():
-    LEDoff(LEFT_LED)
-    LEDoff(RIGHT_LED)
-    LEDoff(CORRECT_LED)
-    LEDoff(WRONG_LED)
 
 
 if __name__=="__main__":
