@@ -43,5 +43,5 @@ class SequentialReader():
                 data = "".join(str(x) for x in backData)
                 data_read = True
 
-        self.cleanup(self.CE0_DEVICE, self.CE0_RESET)
+        self.cleanup(self.CE1_DEVICE, self.CE1_RESET)
         return data
