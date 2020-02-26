@@ -11,7 +11,7 @@ class SequentialReader():
     def cleanup(self, device, pin):
         GPIO.output(pin, GPIO.LOW)
         GPIO.setup(pin, GPIO.IN)
-        spi.closeSPI(device)
+        spi.closeSPI()
 
     def ReadCE0(self):
         data = None
