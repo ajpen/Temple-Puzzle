@@ -11,8 +11,8 @@ Reader = SequentialReader()
 
 LEFT_LED = 13
 RIGHT_LED = 16
-CORRECT_LED = 31
-WRONG_LED = 33
+CORRECT_LED = 33
+WRONG_LED = 31
 
 
 def reset_LEDs():
