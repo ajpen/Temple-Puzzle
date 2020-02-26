@@ -20,7 +20,7 @@ def reset_LEDs():
     LEDoff(WRONG_LED)
 
 
-def safe_exit():
+def safe_exit(**kwargs):
     reset_LEDs()
 
 signal.signal(signal.SIGINT, safe_exit)
