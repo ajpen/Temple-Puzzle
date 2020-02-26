@@ -23,7 +23,7 @@ def reset_LEDs():
 def safe_exit():
     reset_LEDs()
 
-signal.signal(signal.SIGINT, safe_exit())
+signal.signal(signal.SIGINT, safe_exit)
 
 def read_left():
     while True:
