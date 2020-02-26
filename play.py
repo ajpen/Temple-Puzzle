@@ -50,7 +50,7 @@ if __name__=="__main__":
     if len(sys.argv) < 2:
         sys.exit("Usage: play.py [GameNumber]")
 
-    game_id = int(sys.argv[1])
+    game_id = int(sys.argv[1]) - 1
     game = Puzzles[game_id]
 
     left_input = None
